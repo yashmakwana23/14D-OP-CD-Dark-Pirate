@@ -114,11 +114,9 @@
     <script>
         // --- Timezone Helper & IST Calculation ---
         function getTargetISTDateTime(targetDate) {
-            // Convert the target date to UTC
+            // Create date object directly from the input string
+            // The input string is already in IST, so we don't need additional conversion
             const targetUTC = new Date(targetDate);
-            // Adjust for IST (UTC+5:30)
-            targetUTC.setUTCHours(targetUTC.getUTCHours() - 5);
-            targetUTC.setUTCMinutes(targetUTC.getUTCMinutes() - 30);
             console.log(`Target Date: ${targetDate}, Calculated Target UTC: ${targetUTC.toISOString()}`);
             return targetUTC;
         }
